@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelas Kita - Beranda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #fff9cc;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.2s ease;
+        }
+
+        nav a.active {
+            background-color: #f0f0f0;
+        }
+
+        nav a:hover {
+            color: #f5a400;
+        }
+
+        .auth {
+            display: flex;
+            gap: 15px;
+        }
+
+        .auth a {
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        .signup {
+            color: #333;
+        }
+
+        .login {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        .section-content {
+            padding: 80px 40px 40px 40px;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .section-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #d48900;
+        }
+
+        .section-content p {
+            margin-bottom: 24px;
+        }
+
+        /* TRANSISI KUNING KE PUTIH */
+        .fade-to-white {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, #fff9cc, white);
+        }
+
+        /* BAGIAN FOTO */
+        .photo-bar {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .photo-bar img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Lapisan putih transparan di atas foto */
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0.45;
+            backdrop-filter: blur(2px) brightness(1.1);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Transisi putih halus dari atas foto */
+        .photo-top-fade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, white, transparent);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .section-content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <nav>
+            <a href="#" class="active">Beranda</a>
+            <a href="#">Materi</a>
+            <a href="#">Branding</a>
+            <a href="#">Info event</a>
+        </nav>
+        <div class="auth">
+            <a href="#" class="signup">Sign Up</a>
+            <a href="#" class="login">Login</a>
+        </div>
+    </header>
+
+    <!-- Konten Beranda -->
+    <!-- Konten Beranda -->
+    <section class="section-content">
+        <h1>Selamat Datang di Kelas Kita! 💡</h1>
+        <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas yang dirancang khusus untuk
+            mempertemukan semangat belajar dan kreativitas dalam dunia informatika. Di sini, kamu nggak cuma belajar
+            lewat materi yang menarik, tapi juga punya ruang untuk berekspresi, berinovasi, dan berkolaborasi.</p>
+
+        <p>Kami percaya bahwa setiap orang punya gaya belajar dan minat yang unik. Maka dari itu, kami menyajikan
+            beragam kategori cabang ilmu informatika, mulai dari pemrograman dasar, pengembangan web dan aplikasi,
+            desain UI/UX, hingga dunia keamanan siber dan jaringan. Semua disusun secara interaktif dan relevan dengan
+            perkembangan zaman.</p>
+
+        <p>Tapi Kelas Kita bukan sekadar tempat belajar. Kami juga ingin jadi tempat kamu membangun portofolio dan
+            menunjukkan siapa dirimu lewat karya. Di bagian <strong>Branding</strong>, kamu bisa memamerkan hasil kerja
+            kerasmu: mulai dari poster, video, desain, hingga animasi. Kayak pameran virtual gitu!</p>
+
+        <p>Gak berhenti di situ, kami juga selalu update info-info menarik buat kamu. Ada lomba-lomba, webinar,
+            pelatihan, atau event seru lainnya di bagian <strong>Info</strong>. Siap-siap dapet insight, relasi, dan
+            pengalaman baru yang mungkin gak kamu dapetin di tempat lain.</p>
+
+        <p>Semua fitur di Kelas Kita dirancang agar kamu nyaman belajar, bebas eksplorasi, dan termotivasi untuk terus
+            berkembang. Karena buat kami, belajar bukan soal ujian aja, tapi tentang perjalanan seru menemukan potensi
+            terbaikmu.</p>
+
+        <p>Ayo gabung bareng komunitas <strong>Kelas Kita</strong>, tempat belajar jadi lebih hidup, kolaboratif, dan
+            menyenangkan! 🌟</p>
+
+        <p>Yuk, mulai petualangan belajarmu sekarang. Siapapun kamu, apapun latar belakangmu — kamu punya tempat di
+            Kelas Kita. 💛🖤</p>
+    </section>
+
+
+    <!-- Transisi kuning ke putih -->
+    <div class="fade-to-white"></div>
+
+    <!-- Gambar Berlima -->
+    <div class="photo-bar">
+        <img src="fotbar.jpg" alt="Foto Bareng Tim Kelas Kita" />
+        <div class="photo-overlay"></div>
+        <div class="photo-top-fade"></div>
+    </div>
+</body>
+
+</html>
