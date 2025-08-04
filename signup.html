@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #fff7f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff7f0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .left {
+      background: #fff7f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .half-oval {
+      background-color: #fde8d6;
+      width: 340px;
+      height: 500px;
+      border-top-left-radius: 200px;
+      border-top-right-radius: 200px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .half-oval img {
+      position: absolute;
+      bottom: 5px; /* Gambar dinaikkan */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 420px;
+      max-width: unset;
+      z-index: 2;
+    }
+
+    .right {
+      padding: 50px 40px;
+      background: #fff7f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    .input-group input {
+      padding: 12px 15px;
+      border: 1.5px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      font-size: 1rem;
+    }
+
+    .input-group input:focus {
+      border-color: #f7941d;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #f7941d;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #e8830e;
+    }
+
+    .or {
+      text-align: center;
+      color: #999;
+      margin: 20px 0 10px;
+    }
+
+    .signin-text {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .signin-text a {
+      color: #b84e27;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .signin-text a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        display: none;
+      }
+
+      .right {
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <div class="half-oval">
+        <img src="fto signup.png" alt="Ilustrasi Sign Up" />
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>Create Account</h2>
+      <form onsubmit="event.preventDefault(); window.location.href='beranda.html';">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="email@gmail.com" required />
+        </div>
+        <div class="input-group">
+          <label for="phone">Phone no</label>
+          <input type="text" id="phone" placeholder="Enter your phone no" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+        <button type="submit" class="btn">Create Account</button>
+        <div class="or">- or -</div>
+        <p class="signin-text">Already have an account? <a href="login.html">Log in</a></p>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
