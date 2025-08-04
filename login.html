@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome Back - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
         * {
             margin: 0;
@@ -13,24 +16,23 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            background-color: #fff8f2;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1100px;
+            width: 100%;
+            background: #fff;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 600px;
         }
 
         .login-section {
@@ -40,33 +42,15 @@
             justify-content: center;
         }
 
-        .illustration-section {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
         .welcome-title {
             font-size: 2.5rem;
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 40px;
-            text-align: left;
         }
 
         .form-group {
             margin-bottom: 25px;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            color: #7f8c8d;
-            font-weight: 500;
-            font-size: 0.9rem;
         }
 
         .input-wrapper {
@@ -75,107 +59,92 @@
 
         .form-input {
             width: 100%;
-            padding: 15px 50px 15px 20px;
-            border: 2px solid #e9ecef;
+            padding: 15px 50px 15px 45px;
+            border: 2px solid #e0dfdf;
             border-radius: 50px;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
+            background: #fdfdfd;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .form-input:focus {
             outline: none;
             border-color: #ff9500;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 149, 0, 0.1);
+            background: #fff;
         }
 
-        .input-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #adb5bd;
-            font-size: 1.1rem;
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #adb5bd;
-            cursor: pointer;
-            font-size: 1.1rem;
-            padding: 5px;
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
         }
 
         .forgot-password {
             text-align: right;
-            margin-top: 10px;
+            font-size: 0.9rem;
+            margin-top: 5px;
             margin-bottom: 30px;
         }
 
         .forgot-password a {
-            color: #6c757d;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            color: #555;
+            font-weight: 600;
         }
 
         .forgot-password a:hover {
-            color: #ff9500;
+            color: #ff7b00;
         }
 
         .login-btn {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #ff9500 0%, #ff7b00 100%);
+            background: linear-gradient(135deg, #ff9500, #ff7b00);
             color: white;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
             margin-bottom: 30px;
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 123, 0, 0.3);
         }
 
         .divider {
             text-align: center;
-            margin: 20px 0;
-            color: #adb5bd;
-            position: relative;
-        }
-
-        .divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e9ecef;
-            z-index: 1;
-        }
-
-        .divider span {
-            background: white;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
+            color: #999;
+            margin-bottom: 30px;
         }
 
         .social-login {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             margin-bottom: 30px;
         }
@@ -184,57 +153,61 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 2px solid #e9ecef;
-            background: white;
+            border: 2px solid #e0e0e0;
             display: flex;
-            align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            align-items: center;
+            color: #555;
             text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
         }
 
         .social-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .google { color: #db4437; }
-        .facebook { color: #1877f2; }
-        .apple { color: #000000; }
-
         .signup-link {
             text-align: center;
-            color: #6c757d;
             font-size: 0.9rem;
+            color: #555;
         }
 
         .signup-link a {
             color: #ff9500;
+            font-weight: bold;
             text-decoration: none;
-            font-weight: 600;
         }
 
         .signup-link a:hover {
             text-decoration: underline;
         }
 
-        .character-image {
-            max-width: 350px;
-            max-height: 400px;
-            width: auto;
-            height: auto;
-            animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+        .illustration-section {
+            background: #fff8f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .rounded-bg {
+            background: #ffe0c7;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            max-height: 600px;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .character-image {
+            width: 80%;
+            height: auto;
         }
 
         @media (max-width: 768px) {
@@ -252,32 +225,36 @@
             }
 
             .welcome-title {
-                font-size: 2rem;
                 text-align: center;
             }
         }
     </style>
 </head>
+
 <body>
+
     <div class="container">
         <div class="login-section">
-            <h1 class="welcome-title">Welcome Back!</h1>
-            
+            <h1 class="welcome-title">Welcome Back!!</h1>
+
             <form id="loginForm">
                 <div class="form-group">
                     <label class="form-label">Email</label>
                     <div class="input-wrapper">
-                        <span class="input-icon">📧</span>
-                        <input type="email" class="form-input" placeholder="email@gmail.com" required>
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" class="form-input" placeholder="email@gmail.com" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Password</label>
                     <div class="input-wrapper">
-                        <span class="input-icon">🔒</span>
-                        <input type="password" class="form-input" placeholder="Enter your password" id="password" required>
-                        <button type="button" class="password-toggle" onclick="togglePassword()">👁️</button>
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" class="form-input" id="password" placeholder="Enter your password"
+                            required />
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye-slash"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -288,20 +265,12 @@
                 <button type="submit" class="login-btn">Login</button>
             </form>
 
-            <div class="divider">
-                <span>- or -</span>
-            </div>
+            <div class="divider">- or -</div>
 
             <div class="social-login">
-                <a href="#" class="social-btn google" onclick="socialLogin('google')" title="Login with Google">
-                    <span style="font-size: 20px;">G</span>
-                </a>
-                <a href="#" class="social-btn facebook" onclick="socialLogin('facebook')" title="Login with Facebook">
-                    <span style="font-size: 20px;">f</span>
-                </a>
-                <a href="#" class="social-btn apple" onclick="socialLogin('apple')" title="Login with Apple">
-                    <span style="font-size: 20px;">🍎</span>
-                </a>
+                <a href="#" class="social-btn" title="Google"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn" title="Apple"><i class="fab fa-apple"></i></a>
             </div>
 
             <div class="signup-link">
@@ -310,91 +279,54 @@
         </div>
 
         <div class="illustration-section">
-            <img src="fto login.png" alt="Foto Login" />
+            <div class="rounded-bg">
+                <img src="fto login.png" alt="Ilustrasi Orang dengan Laptop" class="character-image" />
+            </div>
         </div>
     </div>
 
     <script>
-        // Toggle password visibility
         function togglePassword() {
-            const passwordInput = document.getElementById('password');
-            const toggleBtn = document.querySelector('.password-toggle');
-            
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleBtn.textContent = '🙈';
+            const input = document.getElementById('password');
+            const icon = document.querySelector('.password-toggle i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
             } else {
-                passwordInput.type = 'password';
-                toggleBtn.textContent = '👁️';
+                input.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
             }
         }
 
-        // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.querySelector('input[type="email"]').value;
-            const password = document.querySelector('input[type="password"]').value;
-            
-            // Simple validation
-            if (!email || !password) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // Simulate login process
-            const loginBtn = document.querySelector('.login-btn');
-            const originalText = loginBtn.textContent;
-            
-            loginBtn.textContent = 'Logging in...';
-            loginBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Login successful! (This is a demo)');
-                loginBtn.textContent = originalText;
-                loginBtn.disabled = false;
-            }, 2000);
-        });
-
-        // Social login functions
-        function socialLogin(provider) {
-            alert(`Login with ${provider.charAt(0).toUpperCase() + provider.slice(1)} clicked! (This is a demo)`);
-        }
-
-        // Forgot password function
         function forgotPassword() {
-            const email = prompt('Please enter your email address:');
+            const email = prompt("Masukkan email Anda:");
             if (email) {
-                alert(`Password reset link has been sent to ${email} (This is a demo)`);
+                alert(`Link reset password dikirim ke ${email}`);
             }
         }
 
-        // Sign up function
         function signUp() {
-            alert('Redirecting to sign up page... (This is a demo)');
+            alert("Menuju halaman pendaftaran...");
         }
 
-        // Add some interactive effects
-        document.querySelectorAll('.form-input').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simulasi login berhasil
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                // Redirect ke beranda.html
+                window.location.href = 'beranda.html';
+            } else {
+                alert("Isi semua kolom terlebih dahulu.");
+            }
         });
 
-        // Add hover effects to social buttons
-        document.querySelectorAll('.social-btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.borderColor = this.style.color;
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.borderColor = '#e9ecef';
-            });
-        });
     </script>
 </body>
+
 </html>
