@@ -1,0 +1,466 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff7ed;
+  color: #222;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.swing {
+  animation: rotateBackAndForth 3s ease-in-out infinite;
+  transform-origin: center;
+}
+.logo {
+  height: 50px;
+}
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+nav a.active {
+  background-color: #f0f0f0;
+}
+nav a:hover {
+  color: #FF9500;
+}
+.auth {
+  display: flex;
+  gap: 15px;
+}
+.auth a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+.signup {
+  color: #333;
+}
+.login {
+  background-color: #FF9500;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  padding: 3rem 1rem 1.5rem 1rem;
+  background: #fff;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-decoration {
+  flex: 0 0 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+.cipratan-kiri img {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  display: block;
+  position: relative;
+  top: -30px;
+}
+.cipratan-kanan img {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  display: block;
+}
+
+
+
+.hero-content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* kecilkan gap agar cipratan lebih dekat */
+  margin-bottom: 10px;
+}
+
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+.icon-box-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFDAA6;
+  border-radius: 12px;
+  padding: 8px;
+  height: 48px;
+  width: 48px;
+  margin-right: 6px;
+}
+.icon-box-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.hero-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+.highlight {
+  color: #FF9500;
+}
+
+.hero-desc {
+  margin-top: 0.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
+  color: #222;
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+
+
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    gap: 8px;
+    padding: 2rem 0.5rem 1rem 0.5rem;
+  }
+  .hero-decoration {
+    flex: 0 0 40px;
+  }
+  .cipratan-kiri img,
+  .cipratan-kanan img {
+    width: 40px;
+    margin-top: 0;
+  }
+  .icon-box-bg {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+  .icon-box-img {
+    width: 28px;
+    height: 28px;
+  }
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+   .hero-desc {
+    font-size: 1rem;
+    max-width: 95vw;
+  }
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.upload-btn {
+  padding: 12px 24px;
+  background-color: #FF9500;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-section {
+  background: #fdf6ee;
+  padding: 32px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 48px;
+  box-shadow: 0 2px 8px rgba(245, 164, 0, 0.07);
+  padding: 18px 36px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px 24px 16px 48px;
+  border: 1px solid #ccc;
+  border-radius: 32px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fff;
+  color: #222;
+  height: 56px;
+  box-sizing: border-box;
+}
+.search-input:focus {
+  border-color: #FF9500;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+.search-icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.search-select-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-select {
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 32px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s;
+  height: 56px;
+  box-sizing: border-box;
+}
+
+.search-select:focus {
+  border-color: #FF9500;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+  font-size: 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .search-bar-container {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 24px;
+    max-width: 98vw;
+  }
+  .search-input-wrapper,
+.search-select-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+  .search-input,
+  .search-select {
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 18px;
+    height: 44px; 
+  }
+}
+
+.materi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 3rem;
+}
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.card-content {
+  padding: 1rem;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+.meta .tag {
+  background: #f8e0b0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+h3 {
+  margin: 0.5rem 0;
+}
+.uploader, .date {
+  font-size: 0.85rem;
+  color: #666;
+}
+.download-btn {
+  margin-top: 0.8rem;
+  background-color: #FF9500;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+.download-btn:hover {
+  background-color: #e69500;
+}
+footer {
+  background-color: #fff;
+  padding: 40px;
+  font-size: 0.95em;
+  color: #222;
+  border-top: 1px solid #eee;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-left {
+  flex: 2;
+  min-width: 250px;
+}
+
+.footer-left hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #aaa;
+  width: 60%;
+}
+.footer-center {
+  flex: 1.2;
+  min-width: 200px;
+}
+.footer-center h4 {
+  margin-bottom: 10px;
+}
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  background-color: #f8e0b0;
+  padding: 6px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.footer-right {
+  flex: 1;
+  min-width: 160px;
+}
+.footer-right h4 {
+  margin-bottom: 10px;
+}
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-right li {
+  margin-bottom: 8px;
+}
+.footer-right a {
+  text-decoration: none;
+  color: #222;
+  transition: color 0.2s;
+}
+.footer-right a:hover {
+  color: #FF9500;
+}
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.85em;
+  color: #777;
+}
+.footer-bottom a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #777;
+}
+.footer-bottom a:hover {
+  color: #FF9500;
+}
+@keyframes rotateBackAndForth {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
