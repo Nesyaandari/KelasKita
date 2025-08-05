@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unggah Materi - Ruang Belajar Digital</title>
+    <link rel="stylesheet" href="unggahmateri.css">
+</head>
+<body>
+    <!-- Navbar -->
+<header>
+  <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
+  <nav>
+      <a href="../beranda.html">Beranda</a>
+      <a class="active" href="#">Materi</a>
+      <a href="../Branding/branding.html">Branding</a>
+      <a href="../SeputarEvent/seputarevent.html">Seputar Event</a>
+  </nav>
+  <div class="auth">
+      <a href="../signup.html" class="signup">Sign Up</a>
+      <a href="../login.html" class="login">Login</a>
+  </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Title -->
+            <div class="page-header">
+                <h1 class="page-title">Unggah Materi Pembelajaran</h1>
+                <p class="page-subtitle">Bagikan pengetahuan Anda dengan komunitas IT Indonesia</p>
+            </div>
+
+            <!-- Upload Form -->
+            <div class="upload-form-container">
+                <form class="upload-form" id="uploadForm">
+                    <!-- Basic Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">Informasi Dasar</h2>
+                        
+                        <div class="form-group">
+                            <label for="title" class="form-label">Judul Materi *</label>
+                            <input type="text" id="title" name="title" class="form-input" required 
+                                   placeholder="Masukkan judul materi pembelajaran">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Deskripsi *</label>
+                            <textarea id="description" name="description" class="form-textarea" required 
+                                      placeholder="Jelaskan secara singkat tentang materi yang akan dibagikan"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category" class="form-label">Kategori *</label>
+                                <select id="category" name="category" class="form-select" required>
+                                    <option value="">Pilih Kategori</option>
+                                    <option value="programming">Programming</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="mobile-development">Mobile Development</option>
+                                    <option value="data-science">Data Science</option>
+                                    <option value="cybersecurity">Cybersecurity</option>
+                                    <option value="networking">Networking</option>
+                                    <option value="database">Database</option>
+                                    <option value="other">Lainnya</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="level" class="form-label">Level *</label>
+                                <select id="level" name="level" class="form-select" required>
+                                    <option value="">Pilih Level</option>
+                                    <option value="beginner">Pemula</option>
+                                    <option value="intermediate">Menengah</option>
+                                    <option value="advanced">Lanjutan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tags" class="form-label">Tags</label>
+                            <input type="text" id="tags" name="tags" class="form-input" 
+                                   placeholder="Pisahkan dengan koma (contoh: HTML, CSS, JavaScript)">
+                        </div>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="form-section">
+                        <h2 class="section-title">Upload File</h2>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📁</div>
+                            <h3 class="upload-title">Seret dan lepas file di sini</h3>
+                            <p class="upload-subtitle">atau <span class="upload-link">pilih file</span></p>
+                            <input type="file" id="fileInput" name="file" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.rar" required>
+                            <p class="upload-info">Format yang didukung: PDF, DOC, DOCX, PPT, PPTX, ZIP, RAR (Maksimal 50MB)</p>
+                        </div>
+
+                        <div class="file-preview" id="filePreview" style="display: none;">
+                            <div class="file-info">
+                                <div class="file-icon">📄</div>
+                                <div class="file-details">
+                                    <p class="file-name" id="fileName">nama-file.pdf</p>
+                                    <p class="file-size" id="fileSize">2.5 MB</p>
+                                </div>
+                                <button type="button" class="remove-file" id="removeFile">✕</button>
+                            </div>
+                            <div class="upload-progress">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">Informasi Tambahan</h2>
+                        
+                        <div class="form-group">
+                            <label for="prerequisites" class="form-label">Prasyarat</label>
+                            <textarea id="prerequisites" name="prerequisites" class="form-textarea" 
+                                      placeholder="Pengetahuan atau skill apa yang diperlukan untuk memahami materi ini?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="learning-outcomes" class="form-label">Hasil Pembelajaran</label>
+                            <textarea id="learning-outcomes" name="learning-outcomes" class="form-textarea" 
+                                      placeholder="Apa yang akan dipelajari setelah menyelesaikan materi ini?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms" class="checkbox-label">
+                                    Saya setuju dengan <a href="#" class="link">syarat dan ketentuan</a> serta 
+                                    <a href="#" class="link">kebijakan privasi</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary">Simpan Draft</button>
+                        <button type="submit" class="btn btn-primary">Unggah Materi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ruang Belajar Digital - Komunitas Informatika Indonesia</p>
+        </div>
+    </footer>
+
+    <script>
+        // File upload functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const filePreview = document.getElementById('filePreview');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const removeFile = document.getElementById('removeFile');
+        const progressBar = document.getElementById('progressBar');
+
+        // Click to upload
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        // Handle file
+        function handleFile(file) {
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+            
+            uploadArea.style.display = 'none';
+            filePreview.style.display = 'block';
+            
+            // Simulate upload progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 200);
+        }
+
+        // Remove file
+        removeFile.addEventListener('click', () => {
+            fileInput.value = '';
+            uploadArea.style.display = 'block';
+            filePreview.style.display = 'none';
+            progressBar.style.width = '0%';
+        });
+
+        // Format file size
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Form submission
+        document.getElementById('uploadForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Materi berhasil diunggah! Terima kasih atas kontribusi Anda.');
+        });
+    </script>
+</body>
+</html>

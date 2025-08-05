@@ -106,7 +106,6 @@ nav a:hover {
 }
 
 
-
 .hero-content {
   flex: 1 1 0;
   display: flex;
@@ -215,8 +214,14 @@ nav a:hover {
   border-radius: 28px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none; /* Tambahkan ini untuk menghilangkan garis bawah */
+  display: inline-block; /* Tambahkan ini agar padding bekerja dengan baik */
 }
 
+.upload-btn:hover {
+  background-color: #e69500;
+  text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
+}
 .search-section {
   background: #fdf6ee;
   padding: 32px 0 0 0;
