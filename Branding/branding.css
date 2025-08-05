@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
+  background-color: #FFF4E5;
   color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Navbar */
 header {
   display: flex;
   justify-content: space-between;
@@ -20,18 +31,22 @@ header {
   top: 0;
   z-index: 999;
 }
+
+.logo {
+  height: 50px;
+}
+
 .swing {
   animation: rotateBackAndForth 3s ease-in-out infinite;
   transform-origin: center;
 }
-.logo {
-  height: 50px;
-}
+
 nav {
   display: flex;
   gap: 30px;
   align-items: center;
 }
+
 nav a {
   text-decoration: none;
   font-weight: 500;
@@ -40,16 +55,20 @@ nav a {
   border-radius: 8px;
   transition: 0.2s ease;
 }
+
 nav a.active {
   background-color: #f0f0f0;
 }
+
 nav a:hover {
   color: #FF9500;
 }
+
 .auth {
   display: flex;
   gap: 15px;
 }
+
 .auth a {
   text-decoration: none;
   padding: 8px 18px;
@@ -57,21 +76,20 @@ nav a:hover {
   font-weight: bold;
   transition: 0.2s ease;
 }
+
 .signup {
   color: #333;
 }
+
 .login {
   background-color: #FF9500;
   color: white;
 }
 
-.btn.upload {
-  background: #ff9f00;
-  color: white;
-}
-
+/* Konten */
 .content {
   padding: 40px 60px;
+  flex: 1 0 auto;
 }
 
 .content h1 {
@@ -94,18 +112,22 @@ nav a:hover {
   font-size: 16px;
 }
 
+/* Tombol Kategori */
 .category-buttons {
   margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .category-buttons button {
-  margin-right: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 30px;
-  background: #eee;
+  background: #ffffff;
   cursor: pointer;
   font-weight: 500;
+  transition: background 0.2s, color 0.2s;
 }
 
 .category-buttons button.active {
@@ -113,24 +135,11 @@ nav a:hover {
   color: white;
 }
 
-.category-btn {
-  display: inline-block;
-  padding: 8px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #f0f0f0;
-  color: #333;
-  font-size: 16px;
-  text-decoration: none;
-  margin: 0 4px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.category-btn:hover {
+.category-buttons button:hover {
   background: #e0e0e0;
 }
 
+/* Grid Projek */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -144,6 +153,7 @@ nav a:hover {
   padding: 15px;
   text-align: left;
   transition: 0.3s;
+  display: block;
 }
 
 .project-card:hover {
@@ -168,129 +178,213 @@ nav a:hover {
   color: #666;
 }
 
+/* Footer */
 footer {
-    background-color: #fff;
-    padding: 40px;
-    font-size: 0.95em;
-    color: #222;
-    border-top: 1px solid #eee;
+  background-color: #fff;
+  padding: 40px;
+  font-size: 0.95em;
+  color: #222;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-    max-width: 1200px;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .footer-left {
-    flex: 2;
-    min-width: 250px;
+  flex: 2;
+  min-width: 250px;
 }
 
 .footer-left .footer-logo {
-    width: 40px;
-    margin-bottom: 10px;
+  width: 40px;
+  margin-bottom: 10px;
 }
 
 .footer-left hr {
-    margin: 15px 0;
-    border: none;
-    border-top: 1px solid #aaa;
-    width: 60%;
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #aaa;
+  width: 60%;
 }
 
 .footer-center {
-    flex: 1.2;
-    min-width: 200px;
+  flex: 1.2;
+  min-width: 200px;
 }
 
 .footer-center h4 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .social-icons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .social-icons img {
-    width: 28px;
-    height: 28px;
-    background-color: #f8e0b0;
-    padding: 6px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 28px;
+  height: 28px;
+  background-color: #f8e0b0;
+  padding: 6px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .footer-right {
-    flex: 1;
-    min-width: 160px;
+  flex: 1;
+  min-width: 160px;
 }
 
 .footer-right h4 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-right ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-right li {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .footer-right a {
-    text-decoration: none;
-    color: #222;
-    transition: color 0.2s;
+  text-decoration: none;
+  color: #222;
+  transition: color 0.2s;
 }
 
 .footer-right a:hover {
-    color: #f5a400;
+  color: #f5a400;
 }
 
 .footer-bottom {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.85em;
-    color: #777;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.85em;
+  color: #777;
 }
 
 .footer-bottom a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #777;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #777;
 }
 
 .footer-bottom a:hover {
-    color: #f5a400;
+  color: #f5a400;
 }
 
+/* Animasi Logo */
 @keyframes rotateBackAndForth {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(15deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .swing {
-    animation: rotateBackAndForth 3s ease-in-out infinite;
-    transform-origin: center;
+  animation: rotateBackAndForth 3s ease-in-out infinite;
+  transform-origin: center;
 }
 
 
-.logo {
-    height: 50px;
+/* Container judul dan tombol sejajar */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Tombol Unggah Proyek */
+.upload-btn {
+  background-color: #ff9500;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-btn:hover {
+  background-color: #e28600;
+}
+
+/* Modal popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  background-color: #f7941e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
 }
