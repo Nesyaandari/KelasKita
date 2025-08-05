@@ -1,62 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-  color: #333;
+  background-color: #ffffff;
+  color: #222;
 }
-
-.navbar {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-
+.swing {
+  animation: rotateBackAndForth 3s ease-in-out infinite;
+  transform-origin: center;
+}
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #f7941e;
+  height: 50px;
 }
-
-.logo-bold {
-  color: #000;
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
-
-.nav-links a {
-  margin: 0 15px;
+nav a {
   text-decoration: none;
-  color: #444;
   font-weight: 500;
-}
-
-.nav-links a.active {
-  font-weight: bold;
-  border-bottom: 2px solid #f7941e;
-}
-
-.auth-buttons .btn {
-  margin-left: 10px;
-  padding: 8px 15px;
+  color: #333;
+  padding: 8px 12px;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
+  transition: 0.2s ease;
 }
-
-.btn.signup {
-  background: transparent;
+nav a.active {
+  background-color: #f0f0f0;
+}
+nav a:hover {
+  color: #FF9500;
+}
+.auth {
+  display: flex;
+  gap: 15px;
+}
+.auth a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+.signup {
   color: #333;
 }
-
-.btn.login {
-  background: #f7941e;
+.login {
+  background-color: #FF9500;
   color: white;
 }
 
