@@ -111,6 +111,45 @@ nav a:hover {
   font-size: 16px;
 }
 
+.search-wrapper {
+  position: relative;
+  max-width: 1500px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-wrapper .search-icon {
+  position: absolute;
+  left: 16px;
+  top: 37%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
+
+.search-wrapper .search {
+  width: 100%;
+  padding: 12px 16px 12px 44px; /* kiri 44px agar tidak menabrak icon */
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+.search-icon img {
+  width: 24px;
+  height: 24px;
+}
+
 /* Tombol Kategori */
 .category-buttons {
   margin-bottom: 30px;
@@ -306,7 +345,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 /* Tombol Unggah Proyek */
