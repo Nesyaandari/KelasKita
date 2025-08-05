@@ -45,7 +45,7 @@
       download, dan kolaborasi dengan komunitas IT Indonesia.
     </p>
     <div class="upload-container">
-    <a href="unggahmateri.html" class="upload-btn">Unggah Materi</a>
+    <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
     
   </div>
   </div>
@@ -260,5 +260,44 @@
   </div>
 </footer>
 
+<!-- Tombol upload sekarang memanggil form popup -->
+<div class="upload-container">
+  <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
+</div>
+
+<!-- Form unggah sebagai popup -->
+<div class="form-overlay" id="formOverlay">
+  <div class="form-popup">
+    <button class="close-form" onclick="closeForm()">&times;</button>
+    <h2>Unggah Materi Pembelajaran</h2>
+    <form>
+      <div class="form-group">
+        <label for="title">Judul Materi *</label>
+        <input type="text" id="title" name="title" required placeholder="Masukkan judul materi">
+      </div>
+
+      <div class="form-group">
+        <label for="fileInput">Upload File *</label>
+        <input type="file" id="fileInput" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.rar" required>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Saya setuju dengan <a href="#">syarat dan ketentuan</a> serta <a href="#">kebijakan privasi</a></label>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="closeForm()">Batal</button>
+        <button type="submit" class="btn btn-primary">Unggah Materi</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="materi.js"></script>
+
 </body>
 </html>
+
+
+

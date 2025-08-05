@@ -464,6 +464,81 @@ footer {
 .footer-bottom a:hover {
   color: #FF9500;
 }
+
+/* styling popup unggah materi */
+    .form-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .form-popup {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .form-popup h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #222;
+    }
+    .form-popup .form-group,
+    .form-popup .form-section {
+      margin-bottom: 1.2rem;
+    }
+    .form-popup label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-popup input[type="text"],
+    .form-popup input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .form-popup .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .form-popup .btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #FF9500;
+      color: #fff;
+    }
+    .btn-secondary {
+      background-color: #ccc;
+      color: #222;
+    }
+    .close-form {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+
 @keyframes rotateBackAndForth {
   0% { transform: rotate(0deg); }
   50% { transform: rotate(15deg); }
