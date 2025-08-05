@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelas Kita - Beranda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #FFF4E5;
+            color: #222;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        @keyframes rotateBackAndForth {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(15deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .swing {
+            animation: rotateBackAndForth 3s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.2s ease;
+        }
+
+        nav a.active {
+            background-color: #f0f0f0;
+        }
+
+        nav a:hover {
+            color: #f5a400;
+        }
+
+        .auth {
+            display: flex;
+            gap: 15px;
+        }
+
+        .auth a {
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        .signup {
+            color: #333;
+        }
+
+        .login {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        .section-content {
+            padding: 80px 40px;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .section-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #f5a400;
+        }
+
+        .fade-to-white {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, #FFF4E5, white);
+        }
+
+        .photo-bar {
+            position: relative;
+        }
+
+        .photo-bar img {
+            width: 100%;
+            display: block;
+        }
+
+        .photo-overlay,
+        .photo-top-fade {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .photo-overlay {
+            top: 0;
+            height: 100%;
+            background: white;
+            opacity: 0.45;
+            backdrop-filter: blur(2px) brightness(1.1);
+        }
+
+        .photo-top-fade {
+            top: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, white, transparent);
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        /* ✅ FOOTER STYLING FIX */
+        footer {
+            background-color: #fff;
+            padding: 40px 20px 20px 20px;
+            border-top: 1px solid #eee;
+            color: #222;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-left img {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .footer-left hr {
+            margin: 15px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+            width: 80%;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons img {
+            width: 28px;
+            height: 28px;
+            background-color: #f8e0b0;
+            padding: 6px;
+            border-radius: 50%;
+        }
+
+        .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-right li {
+            margin-bottom: 8px;
+        }
+
+        .footer-right a {
+            text-decoration: none;
+            color: #222;
+            transition: 0.2s;
+        }
+
+        .footer-right a:hover {
+            color: #f5a400;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85em;
+            margin-top: 30px;
+            color: #777;
+        }
+
+        .footer-bottom a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #777;
+        }
+
+        .footer-bottom a:hover {
+            color: #f5a400;
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(6deg);
+            }
+
+            50% {
+                transform: rotate(-6deg);
+            }
+
+            75% {
+                transform: rotate(3deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .video-scroll {
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .video-list {
+            display: flex;
+            gap: 24px;
+            min-width: 700px;
+        }
+
+        .video-item {
+            flex: 0 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #eee;
+            box-shadow: 0 2px 8px #0001;
+        }
+
+        @media (max-width: 800px) {
+            .video-list {
+                min-width: 0;
+                gap: 16px;
+            }
+
+            .video-item iframe {
+                width: 240px;
+                height: 135px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (disamakan dengan seputarevent) -->
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo swing" />
+        <nav>
+            <a href="beranda.html" class="active">Beranda</a>
+            <a href="materi.html">Materi</a>
+            <a href="branding.html">Branding</a>
+            <a href="seputarevent.html">Seputar Event</a>
+        </nav>
+        <div class="auth">
+            <a href="signup.html" class="signup">Sign Up</a>
+            <a href="login.html" class="login">Login</a>
+        </div>
+    </header>
+
+    </nav>
+
+    <section class="section-content">
+        <h1>Selamat Datang di Kelas Kita! 💡</h1>
+        <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas...</p>
+        <p>Yuk, mulai petualangan belajarmu sekarang. Siapapun kamu — kamu punya tempat di Kelas Kita. 💛🖤</p>
+    </section>
+
+    <!-- Video Informatika (disisipkan di sini) -->
+    <section>
+        <h2 style="color:#f5a400; margin-bottom:18px; font-size:1.3em; text-align:center;">Video Pembelajaran
+        </h2>
+        <div class="video-scroll">
+            <div class="video-list">
+                <div class="video-item">
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/5o3fMLPY7qY"
+                        title="Apa itu Informatika? (by Kelas Terbuka)" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/2Xb5rj8lKMQ"
+                        title="Belajar Algoritma Dasar" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/8cmx7V4oIR4"
+                        title="Apa itu Coding?" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/3yqANLR3pmA"
+                        title="Tips Belajar Informatika" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Berita dan Event -->
+    <section class="event-section">
+        <h2 style="text-align:center; color:#f5a400; margin-bottom:32px;">Berita dan Event</h2>
+        <div class="card-container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
+            <div class="card"
+                style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:280px; overflow:hidden; display:flex; flex-direction:column;">
+                <img src="images/event1.jpg" alt="Event 1" style="width:100%; height:160px; object-fit:cover;">
+                <div class="card-content" style="padding:18px;">
+                    <h3 style="margin-bottom:10px; color:#f5a400;">Lomba Foto & Reel</h3>
+                    <p style="font-size:0.98em; color:#444;">Ikuti lomba foto dan reels seru bertema kampus dan
+                        menangkan hadiah menarik!</p>
+                </div>
+            </div>
+            <div class="card"
+                style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:280px; overflow:hidden; display:flex; flex-direction:column;">
+                <img src="images/event2.jpg" alt="Event 2" style="width:100%; height:160px; object-fit:cover;">
+                <div class="card-content" style="padding:18px;">
+                    <h3 style="margin-bottom:10px; color:#f5a400;">Event Kreatif November</h3>
+                    <p style="font-size:0.98em; color:#444;">Serangkaian kegiatan kreatif bersama teman-teman Kelas Kita
+                        bulan November ini!</p>
+                </div>
+            </div>
+            <div class="card"
+                style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:280px; overflow:hidden; display:flex; flex-direction:column;">
+                <img src="images/event3.jpg" alt="Event 3" style="width:100%; height:160px; object-fit:cover;">
+                <div class="card-content" style="padding:18px;">
+                    <h3 style="margin-bottom:10px; color:#f5a400;">Pagelaran Wirausaha</h3>
+                    <p style="font-size:0.98em; color:#444;">Pameran produk dan jasa dari mahasiswa Kelas Kita. Yuk,
+                        datang dan dukung!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team-section">
+        <h2 style="text-align:center; color:#f5a400; margin-bottom:32px;">MEET OUR TEAM</h2>
+        <div class="team-grid" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
+
+            <div style="text-align:center;">
+                <div
+                    style="width:80px; height:80px; margin:0 auto 10px auto; border-radius:50%; padding:4px; border:3px solid #f5a400;">
+                    <img src="images/ammar.jpg" alt="Asep"
+                        style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                </div>
+                <p style="font-weight:500; color:#333;">M. Ammar Iqbal</p>
+            </div>
+
+            <div style="text-align:center;">
+                <div
+                    style="width:80px; height:80px; margin:0 auto 10px auto; border-radius:50%; padding:4px; border:3px solid #f5a400;">
+                    <img src="images/addina.jpg" alt="Aulia"
+                        style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                </div>
+                <p style="font-weight:500; color:#333;">Addina Zahra M.Y</p>
+            </div>
+
+            <div style="text-align:center;">
+                <div
+                    style="width:80px; height:80px; margin:0 auto 10px auto; border-radius:50%; padding:4px; border:3px solid #f5a400;">
+                    <img src="images/fera.jpg" alt="Nabila"
+                        style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                </div>
+                <p style="font-weight:500; color:#333;">Fera Kusuma A.</p>
+            </div>
+
+            <div style="text-align:center;">
+                <div
+                    style="width:80px; height:80px; margin:0 auto 10px auto; border-radius:50%; padding:4px; border:3px solid #f5a400;">
+                    <img src="images/nesya.jpg" alt="Bintang"
+                        style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                </div>
+                <p style="font-weight:500; color:#333;">Nesya Meilita A.</p>
+            </div>
+
+            <div style="text-align:center;">
+                <div
+                    style="width:80px; height:80px; margin:0 auto 10px auto; border-radius:50%; padding:4px; border:3px solid #f5a400;">
+                    <img src="images/herlambang.jpg" alt="David"
+                        style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                </div>
+                <p style="font-weight:500; color:#333;">Herlambang Alifio P.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tambahkan transisi putih di sini -->
+    <div style="width:100%; height:100px; background:linear-gradient(to bottom, transparent, #fff);"></div>
+
+    <div class="photo-bar">
+        <img src="images/Fotbarkelompok.png" alt="Foto Bareng Tim Kelas Kita" />
+        <div class="photo-overlay"></div>
+        <div class="photo-top-fade"></div>
+    </div>
+
+    <!-- Footer Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="images/logo.png" alt="Logo" />
+                <p>Wadah berbagi pengetahuan, karya, dan kolaborasi di bidang teknologi dan informatika. Bersama kita
+                    tumbuh, bersama kita berinovasi.</p>
+                <hr />
+                <small>© 2025 Semua Hak Dilindungi</small>
+            </div>
+
+            <div>
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <img src="images/facebook-icon.png" alt="Facebook" />
+                    <img src="images/telegram-icon.png" alt="Telegram" />
+                    <img src="images/instagram-icon.png" alt="Instagram" />
+                </div>
+                <h4>Call us</h4>
+                <p>085778409829</p>
+            </div>
+
+            <div class="footer-right">
+                <h4>Komunitas</h4>
+                <ul>
+                    <li><a href="#">Tentang kami</a></li>
+                    <li><a href="#">Visi dan misi</a></li>
+                    <li><a href="#">Dampak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Fitur</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Materi</a></li>
+                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">Event</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Sales and Refunds</a>
+            <a href="#">Legal</a>
+            <a href="#">Site Map</a>
+        </div>
+    </footer>
+    <!-- Footer End -->
+</body>
+
+</html>
