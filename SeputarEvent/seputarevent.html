@@ -27,15 +27,17 @@
   <section class="hero">
     <h2><span class="icon">📅</span> SEPUTAR <span class="highlight">EVENT</span></h2>
     <p><span class="orange">Temukan dan ikuti</span> event menarik seputar komunitas dan <span class="orange">pembelajaran</span></p>
-    <button class="upload-btn">Unggah Event</button>
+    <!-- Tombol unggah -->
+    <button class="upload-btn" onclick="document.getElementById('posterInput').click()">Unggah Event</button>
+    <input type="file" id="posterInput" accept="image/*" style="display: none;" />
   </section>
 
   <!-- Event Cards -->
   <section class="event-gallery">
-    <div class="event-card"><img src="https://1.bp.blogspot.com/-OY56-f8R88o/V2scJlY7goI/AAAAAAAAAVg/UTYRgA3QRQAZF_LvFROgYOBT0sE2tqTHgCLcB/s1600/POSTER.jpg" alt="Event 1" /></div>
-    <div class="event-card"><img src="" alt="Event 2" /></div>
-    <div class="event-card"><img src="" alt="Event 3" /></div>
-    <div class="event-card"><img src="" alt="Event 4" /></div>
+    <!-- Galeri Event -->
+  <div class="event-gallery" id="eventGallery">
+    <!-- Poster akan ditambahkan otomatis ke sini -->
+  </div>
   </section>
 
 
@@ -88,5 +90,29 @@
     <a href="#">Site Map</a>
   </div>
 </footer>
+<script>
+  const input = document.getElementById('posterInput');
+  const gallery = document.getElementById('eventGallery');
+
+  input.addEventListener('change', function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const card = document.createElement('div');
+      card.className = 'event-card';
+
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.alt = "Poster Event";
+
+      card.appendChild(img);
+      gallery.appendChild(card);
+    };
+    reader.readAsDataURL(file);
+  });
+</script>
+
 </body>
 </html>
