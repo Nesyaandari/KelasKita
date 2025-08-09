@@ -242,7 +242,7 @@
             z-index: 1;
         }
 
-        /* Slides container - DIPERBAIKI */
+        /* Slides container */
         .hero-banner .slides {
             display: flex;
             width: 300%; /* 3 slides x 100% = 300% */
@@ -275,6 +275,7 @@
             z-index: 2;
             color: white;
             max-width: 550px;
+            transition: all 0.5s ease;
         }
 
         /* Tombol navigasi */
@@ -348,6 +349,14 @@
             color: #FF4444;
         }
 
+        .blue-text {
+            color: #ffa500;
+        }
+
+        .green-text {
+            color: #ffa500;
+        }
+
         .hero-subtitle {
             font-size: 1.05em;
             font-weight: 400;
@@ -366,19 +375,40 @@
         }
 
         .hero-btn {
-            background-color: #ffa500;
-            color: white;
             padding: 12px 28px;
             font-size: 1em;
             font-weight: 500;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .hero-btn:hover {
+        .hero-btn.btn-primary {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        .hero-btn.btn-primary:hover {
             background-color: #e69500;
+        }
+
+        .hero-btn.btn-secondary {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        .hero-btn.btn-secondary:hover {
+            background-color: #ffa500;
+        }
+
+        .hero-btn.btn-success {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        .hero-btn.btn-success:hover {
+            background-color: #ffa500;
         }
 
 
@@ -602,41 +632,35 @@
     </header>
     <!-- </nav> -->
 
-    <!-- Hero Banner Dirgahayu Indonesia -->
-<section class="hero-banner">
-    <!-- Slides Background -->
-    <div class="slides" id="slides">
-        <div class="slide"><img src="images/merahputih.png" alt="Banner 1"></div>
-        <div class="slide"><img src="images/sampelmobile.png" alt="Banner 2"></div>
-        <div class="slide"><img src="images/sampelweb.jpg" alt="Banner 3"></div>
-    </div>
-
-    <!-- Main Content -->
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="red-text">Dirgahayu</span> Indonesia<br>
-                ke-80
-            </h1>
-            <p class="hero-subtitle">80 tahun Indonesia merdeka, 80 tahun perjuangan dan pembangunan untuk masa depan yang lebih gemilang.</p>
-            <p class="hero-description">Jiwa semangat kemerdekaan diwujudkan dalam bentuk inovasi teknologi!</p>
-            <button class="hero-btn" onclick="alert('Menuju halaman event!')">Lihat Event</button>
-        </div>
-
-        <!-- Tombol Previous -->
-        <button class="nav-btn prev-btn" id="prevBtn">&#10094;</button>
-        
-        <!-- Tombol Next -->
-        <button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
-
-        <!-- Titik indikator -->
-        <div class="dots" id="dots"></div>
-    </section>
+   
 
 
     <section class="section-content">
         <h1>Selamat Datang di Kelas Kita! 💡</h1>
         <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas...</p>
         <p>Yuk, mulai petualangan belajarmu sekarang. Siapapun kamu — kamu punya tempat di Kelas Kita. 💛🖤</p>
+    </section>
+
+    <!-- Hero Banner dengan Konten Dinamis -->
+    <section class="hero-banner">
+        <!-- Slides Background -->
+        <div class="slides" id="slides">
+            <div class="slide"><img src="images/merahputih.png" alt="Banner 1"></div>
+            <div class="slide"><img src="images/sampeluiux.jpg" alt="Banner 2"></div>
+            <div class="slide"><img src="images/sampelweb.jpg" alt="Banner 3"></div>
+        </div>
+
+        <!-- Dynamic Main Content -->
+        <div class="hero-content" id="heroContent">
+            <!-- Konten akan diubah oleh JavaScript -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="nav-btn prev-btn" id="prevBtn">&#10094;</button>
+        <button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
+
+        <!-- Dots Indicator -->
+        <div class="dots" id="dots"></div>
     </section>
 
     <!-- Video Informatika (disisipkan di sini) -->
