@@ -16,7 +16,7 @@
 
 
         body {
-            background: #FFF4E5;
+            background: #fff;
             color: #222;
         }
 
@@ -412,15 +412,78 @@
         }
 
 
+    .section-content {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    min-height: 400px;
+}
 
+.section-image {
+    flex: 1;
+    max-width: 500px;
+}
 
-        .section-content {
-            padding: 80px 40px;
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.8;
-            font-size: 1.1em;
-        }
+.section-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.section-text {
+    flex: 1;
+    line-height: 1.8;
+}
+
+.section-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #f5a400;
+    font-weight: 700;
+}
+
+.section-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify;
+}
+
+.section-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #f5a400;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.section-btn:hover {
+    background-color: #e69500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 164, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+        gap: 40px;
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    .section-text h1 {
+        font-size: 2em;
+    }
+}
 
         .section-content h1 {
             font-size: 2.5em;
@@ -632,14 +695,17 @@
     </header>
     <!-- </nav> -->
 
-   
-
 
     <section class="section-content">
+    <div class="section-image">
+        <img src="images/duaorang.png" alt="Ilustrasi Kelas Kita - Dua orang belajar bersama" />
+    </div>
+    <div class="section-text">
         <h1>Selamat Datang di Kelas Kita! 💡</h1>
-        <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas...</p>
-        <p>Yuk, mulai petualangan belajarmu sekarang. Siapapun kamu — kamu punya tempat di Kelas Kita. 💛🖤</p>
-    </section>
+        <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas. Yuk, mulai petualangan belajarmu sekarang. Siapapun kamu, kamu punya tempat di Kelas Kita.</p>
+        <button class="section-btn">Eksplor</button>
+    </div>
+</section>
 
     <!-- Hero Banner dengan Konten Dinamis -->
     <section class="hero-banner">
@@ -704,7 +770,7 @@
         <div class="card-container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
             <div class="card"
                 style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:280px; overflow:hidden; display:flex; flex-direction:column;">
-                <img src="images/event1.jpg" alt="Event 1" style="width:100%; height:160px; object-fit:cover;">
+                <img src="images/event1.png" alt="Event 1" style="width:100%; height:160px; object-fit:cover;">
                 <div class="card-content" style="padding:18px;">
                     <h3 style="margin-bottom:10px; color:#f5a400;">Lomba Foto & Reel</h3>
                     <p style="font-size:0.98em; color:#444;">Ikuti lomba foto dan reels seru bertema kampus dan
@@ -713,7 +779,7 @@
             </div>
             <div class="card"
                 style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:280px; overflow:hidden; display:flex; flex-direction:column;">
-                <img src="images/event2.jpg" alt="Event 2" style="width:100%; height:160px; object-fit:cover;">
+                <img src="images/event2.png" alt="Event 2" style="width:100%; height:160px; object-fit:cover;">
                 <div class="card-content" style="padding:18px;">
                     <h3 style="margin-bottom:10px; color:#f5a400;">Event Kreatif November</h3>
                     <p style="font-size:0.98em; color:#444;">Serangkaian kegiatan kreatif bersama teman-teman Kelas Kita
@@ -722,7 +788,7 @@
             </div>
             <div class="card"
                 style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:280px; overflow:hidden; display:flex; flex-direction:column;">
-                <img src="images/event3.jpg" alt="Event 3" style="width:100%; height:160px; object-fit:cover;">
+                <img src="images/event3.png" alt="Event 3" style="width:100%; height:160px; object-fit:cover;">
                 <div class="card-content" style="padding:18px;">
                     <h3 style="margin-bottom:10px; color:#f5a400;">Pagelaran Wirausaha</h3>
                     <p style="font-size:0.98em; color:#444;">Pameran produk dan jasa dari mahasiswa Kelas Kita. Yuk,
