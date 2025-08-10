@@ -34,11 +34,24 @@
       <a href="../Branding/branding.html">Branding</a>
       <a href="../SeputarEvent/seputarevent.html">Seputar Event</a>
     </nav>
-    <div class="auth">
-      <a href="../signup.html" class="signup">Sign Up</a>
-      <a href="../login.html" class="login">Login</a>
-    </div>
+    <div class="auth" id="authSection">
+    <a href="signup.html" class="signup">Sign Up</a>
+    <a href="login.html" class="login">Login</a>
+</div>
   </header>
+
+  <!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="../images/logo.png" alt="KelasKita" class="sidebar-logo">
+    </div>
+    <ul class="sidebar-menu">
+        <li id="menuProfile"><img src="../images/profileuser.png" class="icon"> Profil</li>
+        <li id="menuSettings"><img src="../images/settings.png" class="icon"> Settings</li>
+        <li id="menuLogout"><img src="../images/logout.png" class="icon"> Log out</li>
+    </ul>
+</div>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -191,7 +204,7 @@
 
   <!-- Tombol upload sekarang memanggil form popup -->
   <div class="upload-container">
-    <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
+    <!-- <button class="upload-btn" onclick="openForm()">Unggah Materi</button> -->
   </div>
 
   <!-- Form unggah sebagai popup -->
@@ -224,7 +237,9 @@
     </div>
   </div>
 
+  <script src="../sidebar.js"></script>
   <script src="materi.js"></script>
+  <script src="../auth.js"></script>
 
 </body>
 

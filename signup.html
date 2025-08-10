@@ -171,25 +171,44 @@
 
     <div class="right">
       <h2>Create Account</h2>
-      <form onsubmit="event.preventDefault(); window.location.href='beranda.html';">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="email@gmail.com" required />
-        </div>
-        <div class="input-group">
-          <label for="phone">Phone no</label>
-          <input type="text" id="phone" placeholder="Enter your phone no" required />
-        </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required />
-        </div>
-        <button type="submit" class="btn">Create Account</button>
-        <div class="or">- or -</div>
-        <p class="signin-text">Already have an account? <a href="login.html">Log in</a></p>
-      </form>
-    </div>
+      <!-- Hanya bagian form yang diubah -->
+<form id="signupForm">
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="email@gmail.com" required />
   </div>
+  <div class="input-group">
+    <label for="phone">Phone no</label>
+    <input type="text" id="phone" placeholder="Enter your phone no" required />
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password" required />
+  </div>
+  <button type="submit" class="btn">Create Account</button>
+  <div class="or">- or -</div>
+  <p class="signin-text">Already have an account? <a href="login.html">Log in</a></p>
+</form>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Simpan data akun ke localStorage
+  localStorage.setItem('registeredEmail', email);
+  localStorage.setItem('registeredPassword', password);
+  localStorage.setItem('username', email.split('@')[0]);
+  localStorage.setItem('userAvatar', `${window.location.origin}/images/addina.jpg`);
+
+  // Jangan set isLoggedIn di sini
+  // Redirect ke login
+  window.location.href = 'login.html';
+});
+
+</script>
+
 
 </body>
 </html>
