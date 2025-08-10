@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat User & Admin</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <h2>💬 Chat Layanan</h2>
+            <span class="status">Online</span>
+        </div>
+
+        <!-- Isi Chat -->
+        <div class="chat-box" id="chat-box">
+            <div class="message admin">
+                <div class="bubble">Halo, ada yang bisa kami bantu? 😊</div>
+                <span class="time">09:00</span>
+            </div>
+
+            <div class="message user">
+                <div class="bubble">Iya kak, saya mau tanya soal layanan.</div>
+                <span class="time">09:01</span>
+            </div>
+        </div>
+
+        <!-- Input Pesan -->
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Ketik pesan..." />
+            <button id="send-btn">📨</button>
+        </div>
+    </div>
+
+    <script>
+        const sendBtn = document.getElementById("send-btn");
+        const messageInput = document.getElementById("message-input");
+        const chatBox = document.getElementById("chat-box");
+
+        sendBtn.addEventListener("click", sendMessage);
+        messageInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+
+        function sendMessage() {
+            const text = messageInput.value.trim();
+            if (text === "") return;
+
+            // Buat elemen pesan user
+            const msg = document.createElement("div");
+            msg.classList.add("message", "user");
+            msg.innerHTML = `<div class="bubble">${text}</div>
+                             <span class="time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
+            chatBox.appendChild(msg);
+
+            messageInput.value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Simulasi balasan admin otomatis
+            setTimeout(() => {
+                const adminMsg = document.createElement("div");
+                adminMsg.classList.add("message", "admin");
+                adminMsg.innerHTML = `<div class="bubble">Pesan kamu sudah kami terima 🙏</div>
+                                      <span class="time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
+                chatBox.appendChild(adminMsg);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
