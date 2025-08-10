@@ -436,3 +436,11 @@ footer {
 .footer-bottom a:hover {
     color: #f5a400;
 }
+
+<body>
+    <!-- ...existing code... -->
+
+    <div class="garuda-float">
+        <img src="../images/chat.png" alt="Chat" style="width:32px; height:32px;">
+    </div>
+</body>

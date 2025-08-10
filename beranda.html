@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelas Kita - Beranda</title>
     <style>
-       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
 
         body {
@@ -46,15 +47,35 @@
         }
 
         @keyframes flagWave {
-            0%, 100% { transform: translateX(0) rotateY(0deg); }
-            25% { transform: translateX(-10px) rotateY(5deg); }
-            50% { transform: translateX(-5px) rotateY(-3deg); }
-            75% { transform: translateX(-15px) rotateY(7deg); }
+
+            0%,
+            100% {
+                transform: translateX(0) rotateY(0deg);
+            }
+
+            25% {
+                transform: translateX(-10px) rotateY(5deg);
+            }
+
+            50% {
+                transform: translateX(-5px) rotateY(-3deg);
+            }
+
+            75% {
+                transform: translateX(-15px) rotateY(7deg);
+            }
         }
 
         @keyframes shimmer {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
 
         /* Floating Garuda */
@@ -76,10 +97,23 @@
         }
 
         @keyframes floatGaruda {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            25% { transform: translateY(-10px) scale(1.05); }
-            50% { transform: translateY(-5px) scale(1.02); }
-            75% { transform: translateY(-8px) scale(1.08); }
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+            }
+
+            25% {
+                transform: translateY(-10px) scale(1.05);
+            }
+
+            50% {
+                transform: translateY(-5px) scale(1.02);
+            }
+
+            75% {
+                transform: translateY(-8px) scale(1.08);
+            }
         }
 
         /* Confetti Animation */
@@ -109,6 +143,7 @@
                 transform: translateY(-100vh) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(100vh) rotate(360deg);
                 opacity: 0;
@@ -129,7 +164,7 @@
             color: #FFFFFF;
             font-weight: bold;
             font-size: 0.9em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: textGlow 2s ease-in-out infinite;
             display: inline-block;
             padding: 0 20px;
@@ -138,8 +173,15 @@
         }
 
         @keyframes textGlow {
-            0%, 100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-            50% { text-shadow: 2px 2px 8px rgba(255,215,0,0.8), 0 0 10px rgba(255,0,0,0.6); }
+
+            0%,
+            100% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            50% {
+                text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.6);
+            }
         }
 
         header {
@@ -238,14 +280,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.35);
+            background: rgba(0, 0, 0, 0.35);
             z-index: 1;
         }
 
         /* Slides container */
         .hero-banner .slides {
             display: flex;
-            width: 300%; /* 3 slides x 100% = 300% */
+            width: 300%;
+            /* 3 slides x 100% = 300% */
             height: 100%;
             transition: transform 0.6s ease-in-out;
             position: absolute;
@@ -254,7 +297,8 @@
         }
 
         .hero-banner .slide {
-            width: 33.333%; /* 100% / 3 slides = 33.333% */
+            width: 33.333%;
+            /* 100% / 3 slides = 33.333% */
             height: 100%;
             flex-shrink: 0;
         }
@@ -283,7 +327,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 15px 18px;
@@ -295,7 +339,7 @@
         }
 
         .hero-banner .nav-btn:hover {
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.8);
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -320,7 +364,7 @@
             height: 12px;
             width: 12px;
             margin: 0 5px;
-            background-color: rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
@@ -333,7 +377,7 @@
         }
 
         .hero-banner .dot:hover {
-            background-color: rgba(255,255,255,0.8);
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         /* Hero text styling */
@@ -412,78 +456,78 @@
         }
 
 
-    .section-content {
-    padding: 80px 40px;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    min-height: 400px;
-}
+        .section-content {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            min-height: 400px;
+        }
 
-.section-image {
-    flex: 1;
-    max-width: 500px;
-}
+        .section-image {
+            flex: 1;
+            max-width: 500px;
+        }
 
-.section-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
+        .section-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
 
-.section-text {
-    flex: 1;
-    line-height: 1.8;
-}
+        .section-text {
+            flex: 1;
+            line-height: 1.8;
+        }
 
-.section-text h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #f5a400;
-    font-weight: 700;
-}
+        .section-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #f5a400;
+            font-weight: 700;
+        }
 
-.section-text p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: justify;
-}
+        .section-text p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: justify;
+        }
 
-.section-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: #f5a400;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
+        .section-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #f5a400;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
 
-.section-btn:hover {
-    background-color: #e69500;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(245, 164, 0, 0.3);
-}
+        .section-btn:hover {
+            background-color: #e69500;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 164, 0, 0.3);
+        }
 
-@media (max-width: 768px) {
-    .section-content {
-        flex-direction: column;
-        gap: 40px;
-        padding: 60px 20px;
-        text-align: center;
-    }
-    
-    .section-text h1 {
-        font-size: 2em;
-    }
-}
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+                gap: 40px;
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            .section-text h1 {
+                font-size: 2em;
+            }
+        }
 
         .section-content h1 {
             font-size: 2.5em;
@@ -665,18 +709,20 @@
     </style>
 </head>
 
- <div class="merdeka-banner">
-        <div class="merdeka-text"> Dirgahayu Republik Indonesia ke-80! Merdeka!</div>
-    </div>
+<div class="merdeka-banner">
+    <div class="merdeka-text"> Dirgahayu Republik Indonesia ke-80! Merdeka!</div>
+</div>
 
-    <!-- Floating Indonesian Flag -->
-    <div class="flag-overlay">
-        <div class="flag-red"></div>
-        <div class="flag-white"></div>
-    </div>
+<!-- Floating Indonesian Flag -->
+<div class="flag-overlay">
+    <div class="flag-red"></div>
+    <div class="flag-white"></div>
+</div>
 
-    <!-- Floating Garuda Symbol -->
-    <div class="garuda-float"></div>
+<!-- Floating Garuda Symbol -->
+<div class="garuda-float">
+    <img src="images/chat.png" alt="Chat" style="width:32px; height:32px;">
+</div>
 
 <body>
     <!-- Navbar (disamakan dengan seputarevent) -->
@@ -697,15 +743,16 @@
 
 
     <section class="section-content">
-    <div class="section-image">
-        <img src="images/duaorang.png" alt="Ilustrasi Kelas Kita - Dua orang belajar bersama" />
-    </div>
-    <div class="section-text">
-        <h1>Selamat Datang di Kelas Kita! 💡</h1>
-        <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas. Yuk, mulai petualangan belajarmu sekarang. Siapapun kamu, kamu punya tempat di Kelas Kita.</p>
-        <button class="section-btn">Eksplor</button>
-    </div>
-</section>
+        <div class="section-image">
+            <img src="images/duaorang.png" alt="Ilustrasi Kelas Kita - Dua orang belajar bersama" />
+        </div>
+        <div class="section-text">
+            <h1>Selamat Datang di Kelas Kita! 💡</h1>
+            <p><strong>Kelas Kita</strong> adalah platform pembelajaran berbasis komunitas. Yuk, mulai petualangan
+                belajarmu sekarang. Siapapun kamu, kamu punya tempat di Kelas Kita.</p>
+            <button class="section-btn">Eksplor</button>
+        </div>
+    </section>
 
     <!-- Hero Banner dengan Konten Dinamis -->
     <section class="hero-banner">
@@ -912,7 +959,7 @@
     </footer>
     <!-- Footer End -->
 
-  <script src="beranda.js"></script>
+    <script src="beranda.js"></script>
 
 </body>
 

@@ -1,226 +1,231 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Materi - Komunitas Informatika</title>
   <link rel="stylesheet" href="materi.css" />
 </head>
+
 <body>
 
   <!-- banner diatas navbar -->
   <div class="merdeka-banner">
-        <div class="merdeka-text">Dirgahayu Republik Indonesia ke-80! Merdeka! </div>
-    </div>
+    <div class="merdeka-text">Dirgahayu Republik Indonesia ke-80! Merdeka! </div>
+  </div>
 
-    <!-- Floating Indonesian Flag -->
-    <div class="flag-overlay">
-        <div class="flag-red"></div>
-        <div class="flag-white"></div>
-    </div>
-    <!-- Floating Garuda Symbol -->
-    <div class="garuda-float"></div>
+  <!-- Floating Indonesian Flag -->
+  <div class="flag-overlay">
+    <div class="flag-red"></div>
+    <div class="flag-white"></div>
+  </div>
+  <!-- Floating Garuda Symbol -->
+  <div class="garuda-float">
+    <img src="../images/chat.png" alt="Chat" style="width:32px; height:32px;">
+  </div>
 
-<!-- Navbar -->
-<header>
-  <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
-  <nav>
+  <!-- Navbar -->
+  <header>
+    <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
+    <nav>
       <a href="../beranda.html">Beranda</a>
       <a class="active" href="#">Materi</a>
       <a href="../Branding/branding.html">Branding</a>
       <a href="../SeputarEvent/seputarevent.html">Seputar Event</a>
-  </nav>
-  <div class="auth">
+    </nav>
+    <div class="auth">
       <a href="../signup.html" class="signup">Sign Up</a>
       <a href="../login.html" class="login">Login</a>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-title-row">
-      <span class="cipratan-kiri">
-        <img src="../images/kiri.png" alt="cipratan kiri" />
-      </span>
-      <span class="icon-box-bg">
-        <img src="../images/book.png" alt="icon box" class="icon-box-img" />
-      </span>
-      <span class="hero-title">
-        <b>Ruang Belajar Digital <span class="highlight">Komunitas Informatika</span></b>
-      </span>
-      <span class="cipratan-kanan">
-        <img src="../images/kanan.png" alt="cipratan kanan" />
-      </span>
     </div>
-    <p class="hero-desc">
-      Berbagi dan akses materi pembelajaran informatika terlengkap. Upload,download, dan kolaborasi dengan komunitas IT Indonesia.
-    </p>
-    <div class="upload-container">
-    <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
-    
-  </div>
-  </div>
-</section>
+  </header>
 
-<!-- Search Bar -->
- <section class="search-section">
-  <div class="search-bar-container">
-    <div class="search-input-wrapper">
-      <input type="text" class="search-input" placeholder="Cari materi, atau topik . . ." />
-      <span class="search-icon">
-        <img src="../images/search-icon.png" alt="Search Icon" />
-      </span>
-    </div>
-
-    <!-- tipe -->
-    <div class="search-select-wrapper">
-      <select class="search-select">
-        <option value="">Tipe</option>
-        <option value="pdf">.pdf</option>
-        <option value="ppt">.ppt</option>
-      </select>
-    </div>
-  </div>
-</section>
-
-
-<!-- Materi Grid -->
-<section class="materi-grid">
-  <!-- Card 1 -->
-  <div class="card">
-    <img src="/images/cyber.webp" alt="Materi" />
-    <div class="card-content">
-      <div class="meta">
-        <span class="tag">PDF</span>
-        <span class="download">⬇ 20x diunduh</span>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-title-row">
+        <span class="cipratan-kiri">
+          <img src="../images/kiri.png" alt="cipratan kiri" />
+        </span>
+        <span class="icon-box-bg">
+          <img src="../images/book.png" alt="icon box" class="icon-box-img" />
+        </span>
+        <span class="hero-title">
+          <b>Ruang Belajar Digital <span class="highlight">Komunitas Informatika</span></b>
+        </span>
+        <span class="cipratan-kanan">
+          <img src="../images/kanan.png" alt="cipratan kanan" />
+        </span>
       </div>
-      <h3>Dasar Cybersecurity</h3>
-      <p class="uploader">Diunggah oleh: timkus</p>
-      <p class="date">Tanggal unggah: 21 Juli 1445</p>
-      <button class="download-btn">Download Materi</button>
-    </div>
-  </div>
-  <!-- Card 2 -->
-  <div class="card">
-    <img src="/images/jaringan.jpg" alt="Materi" />
-    <div class="card-content">
-      <div class="meta">
-        <span class="tag">PDF</span>
-        <span class="download">⬇ 18x diunduh</span>
+      <p class="hero-desc">
+        Berbagi dan akses materi pembelajaran informatika terlengkap. Upload,download, dan kolaborasi dengan komunitas
+        IT Indonesia.
+      </p>
+      <div class="upload-container">
+        <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
+
       </div>
-      <h3>Pengenalan Jaringan Komputer</h3>
-      <p class="uploader">Diunggah oleh: rina</p>
-      <p class="date">Tanggal unggah: 18 Juli 1445</p>
-      <button class="download-btn">Download Materi</button>
     </div>
-  </div>
-  <!-- Card 3 -->
-  <div class="card">
-    <img src="/images/algoritma.jpg" alt="Materi" />
-    <div class="card-content">
-      <div class="meta">
-        <span class="tag">PDF</span>
-        <span class="download">⬇ 15x diunduh</span>
+  </section>
+
+  <!-- Search Bar -->
+  <section class="search-section">
+    <div class="search-bar-container">
+      <div class="search-input-wrapper">
+        <input type="text" class="search-input" placeholder="Cari materi, atau topik . . ." />
+        <span class="search-icon">
+          <img src="../images/search-icon.png" alt="Search Icon" />
+        </span>
       </div>
-      <h3>Algoritma & Pemrograman Dasar</h3>
-      <p class="uploader">Diunggah oleh: budi</p>
-      <p class="date">Tanggal unggah: 15 Juli 1445</p>
-      <button class="download-btn">Download Materi</button>
+
+      <!-- tipe -->
+      <div class="search-select-wrapper">
+        <select class="search-select">
+          <option value="">Tipe</option>
+          <option value="pdf">.pdf</option>
+          <option value="ppt">.ppt</option>
+        </select>
+      </div>
     </div>
-  </div>
-  
-</section>
-<!-- ...existing code... --
+  </section>
+
+
+  <!-- Materi Grid -->
+  <section class="materi-grid">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="/images/cyber.webp" alt="Materi" />
+      <div class="card-content">
+        <div class="meta">
+          <span class="tag">PDF</span>
+          <span class="download">⬇ 20x diunduh</span>
+        </div>
+        <h3>Dasar Cybersecurity</h3>
+        <p class="uploader">Diunggah oleh: timkus</p>
+        <p class="date">Tanggal unggah: 21 Juli 1445</p>
+        <button class="download-btn">Download Materi</button>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="/images/jaringan.jpg" alt="Materi" />
+      <div class="card-content">
+        <div class="meta">
+          <span class="tag">PDF</span>
+          <span class="download">⬇ 18x diunduh</span>
+        </div>
+        <h3>Pengenalan Jaringan Komputer</h3>
+        <p class="uploader">Diunggah oleh: rina</p>
+        <p class="date">Tanggal unggah: 18 Juli 1445</p>
+        <button class="download-btn">Download Materi</button>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="/images/algoritma.jpg" alt="Materi" />
+      <div class="card-content">
+        <div class="meta">
+          <span class="tag">PDF</span>
+          <span class="download">⬇ 15x diunduh</span>
+        </div>
+        <h3>Algoritma & Pemrograman Dasar</h3>
+        <p class="uploader">Diunggah oleh: budi</p>
+        <p class="date">Tanggal unggah: 15 Juli 1445</p>
+        <button class="download-btn">Download Materi</button>
+      </div>
+    </div>
+
+  </section>
+  <!-- ...existing code... --
 
 <!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <img src="../images/logo.png" alt="Logo" class="logo swing" />
-      <p>Wadah berbagi pengetahuan, karya, dan kolaborasi di bidang teknologi dan informatika. Bersama kita tumbuh, bersama kita berinovasi.</p>
-      <hr />
-      <small>© 2025 Semua Hak Dilindungi</small>
-    </div>
-
-    <div class="footer-center">
-      <h4>Follow us</h4>
-      <div class="social-icons">
-        <img src="../images/facebook-icon.png" alt="Facebook" />
-        <img src="../images/telegram-icon.png" alt="Telegram" />
-        <img src="../images/instagram-icon.png" alt="Instagram" />
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="../images/logo.png" alt="Logo" class="logo swing" />
+        <p>Wadah berbagi pengetahuan, karya, dan kolaborasi di bidang teknologi dan informatika. Bersama kita tumbuh,
+          bersama kita berinovasi.</p>
+        <hr />
+        <small>© 2025 Semua Hak Dilindungi</small>
       </div>
-      <h4>Call us</h4>
-      <p>085778409829</p>
+
+      <div class="footer-center">
+        <h4>Follow us</h4>
+        <div class="social-icons">
+          <img src="../images/facebook-icon.png" alt="Facebook" />
+          <img src="../images/telegram-icon.png" alt="Telegram" />
+          <img src="../images/instagram-icon.png" alt="Instagram" />
+        </div>
+        <h4>Call us</h4>
+        <p>085778409829</p>
+      </div>
+
+      <div class="footer-right">
+        <h4>Komunitas</h4>
+        <ul>
+          <li><a href="#">Tentang kami</a></li>
+          <li><a href="#">Visi dan misi</a></li>
+          <li><a href="#">Dampak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <h4>Fitur</h4>
+        <ul>
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#">Materi</a></li>
+          <li><a href="#">Branding</a></li>
+          <li><a href="#">Event</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="footer-right">
-      <h4>Komunitas</h4>
-      <ul>
-        <li><a href="#">Tentang kami</a></li>
-        <li><a href="#">Visi dan misi</a></li>
-        <li><a href="#">Dampak</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sales and Refunds</a>
+      <a href="#">Legal</a>
+      <a href="#">Site Map</a>
     </div>
+  </footer>
 
-    <div class="footer-right">
-      <h4>Fitur</h4>
-      <ul>
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Materi</a></li>
-        <li><a href="#">Branding</a></li>
-        <li><a href="#">Event</a></li>
-      </ul>
+  <!-- Tombol upload sekarang memanggil form popup -->
+  <div class="upload-container">
+    <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
+  </div>
+
+  <!-- Form unggah sebagai popup -->
+  <div class="form-overlay" id="formOverlay">
+    <div class="form-popup">
+      <button class="close-form" onclick="closeForm()">&times;</button>
+      <h2>Unggah Materi Pembelajaran</h2>
+      <form>
+        <div class="form-group">
+          <label for="title">Judul Materi *</label>
+          <input type="text" id="title" name="title" required placeholder="Masukkan judul materi">
+        </div>
+
+        <div class="form-group">
+          <label for="fileInput">Upload File *</label>
+          <input type="file" id="fileInput" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.rar" required>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">Saya setuju dengan <a href="#">syarat dan ketentuan</a> serta <a href="#">kebijakan
+              privasi</a></label>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="closeForm()">Batal</button>
+          <button type="submit" class="btn btn-primary">Unggah Materi</button>
+        </div>
+      </form>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Use</a>
-    <a href="#">Sales and Refunds</a>
-    <a href="#">Legal</a>
-    <a href="#">Site Map</a>
-  </div>
-</footer>
-
-<!-- Tombol upload sekarang memanggil form popup -->
-<div class="upload-container">
-  <button class="upload-btn" onclick="openForm()">Unggah Materi</button>
-</div>
-
-<!-- Form unggah sebagai popup -->
-<div class="form-overlay" id="formOverlay">
-  <div class="form-popup">
-    <button class="close-form" onclick="closeForm()">&times;</button>
-    <h2>Unggah Materi Pembelajaran</h2>
-    <form>
-      <div class="form-group">
-        <label for="title">Judul Materi *</label>
-        <input type="text" id="title" name="title" required placeholder="Masukkan judul materi">
-      </div>
-
-      <div class="form-group">
-        <label for="fileInput">Upload File *</label>
-        <input type="file" id="fileInput" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.rar" required>
-      </div>
-
-      <div class="form-group">
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">Saya setuju dengan <a href="#">syarat dan ketentuan</a> serta <a href="#">kebijakan privasi</a></label>
-      </div>
-
-      <div class="form-actions">
-        <button type="button" class="btn btn-secondary" onclick="closeForm()">Batal</button>
-        <button type="submit" class="btn btn-primary">Unggah Materi</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src="materi.js"></script>
+  <script src="materi.js"></script>
 
 </body>
+
 </html>
-
-
-

@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seputar Event</title>
   <link rel="stylesheet" href="seputarevent.css" />
 </head>
+
 <body>
 
   <!-- banner diatas navbar -->
   <div class="merdeka-banner">
-        <div class="merdeka-text">Dirgahayu Republik Indonesia ke-80! Merdeka! </div>
-    </div>
+    <div class="merdeka-text">Dirgahayu Republik Indonesia ke-80! Merdeka! </div>
+  </div>
 
-    <!-- Floating Indonesian Flag -->
-    <div class="flag-overlay">
-        <div class="flag-red"></div>
-        <div class="flag-white"></div>
-    </div>
-    <!-- Floating Garuda Symbol -->
-    <div class="garuda-float"></div>
-    
+  <!-- Floating Indonesian Flag -->
+  <div class="flag-overlay">
+    <div class="flag-red"></div>
+    <div class="flag-white"></div>
+  </div>
+  <!-- Floating Garuda Symbol -->
+  <div class="garuda-float">
+    <img src="../images/chat.png" alt="Chat" style="width:32px; height:32px;">
+  </div>
+
   <!-- Navbar -->
-<header>
+  <header>
     <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
     <nav>
-        <a href="../beranda.html">Beranda</a>
+      <a href="../beranda.html">Beranda</a>
       <a href="../Materi/materi.html">Materi</a>
       <a href="../Branding/branding.html">Branding</a>
       <a class="active" href="#">Seputar Event</a>
     </nav>
     <div class="auth">
-        <a href="../signup.html" class="signup">Sign Up</a>
-        <a href="../login.html" class="login">Login</a>
+      <a href="../signup.html" class="signup">Sign Up</a>
+      <a href="../login.html" class="login">Login</a>
     </div>
-</header>
+  </header>
 
 
   <!-- Hero Section -->
   <section class="hero">
     <h2><span class="icon">📅</span> SEPUTAR <span class="highlight">EVENT</span></h2>
-    <p><span class="orange">Temukan dan ikuti</span> event menarik seputar komunitas dan <span class="orange">pembelajaran</span></p>
+    <p><span class="orange">Temukan dan ikuti</span> event menarik seputar komunitas dan <span
+        class="orange">pembelajaran</span></p>
     <!-- Tombol unggah -->
     <button class="upload-btn" onclick="document.getElementById('posterInput').click()">Unggah Event</button>
     <input type="file" id="posterInput" accept="image/*" style="display: none;" />
@@ -49,84 +54,86 @@
   <!-- Event Cards -->
   <section class="event-gallery">
     <!-- Galeri Event -->
-  <div class="event-gallery" id="eventGallery">
-    <!-- Poster akan ditambahkan otomatis ke sini -->
-  </div>
+    <div class="event-gallery" id="eventGallery">
+      <!-- Poster akan ditambahkan otomatis ke sini -->
+    </div>
   </section>
 
 
   <!-- Footer -->
   <footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
-      <p>Wadah berbagi pengetahuan, karya, dan kolaborasi di bidang teknologi dan informatika. Bersama kita tumbuh, bersama kita berinovasi.</p>
-      <hr />
-      <small>© 2025 Semua Hak Dilindungi</small>
-    </div>
-
-    <div class="footer-center">
-      <h4>Follow us</h4>
-      <div class="social-icons">
-        <img src="../images/facebook-icon.png" alt="Facebook" />
-        <img src="../images/telegram-icon.png" alt="Telegram" />
-        <img src="../images/instagram-icon.png" alt="Instagram" />
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
+        <p>Wadah berbagi pengetahuan, karya, dan kolaborasi di bidang teknologi dan informatika. Bersama kita tumbuh,
+          bersama kita berinovasi.</p>
+        <hr />
+        <small>© 2025 Semua Hak Dilindungi</small>
       </div>
-      <h4>Call us</h4>
-      <p>085778409829</p>
+
+      <div class="footer-center">
+        <h4>Follow us</h4>
+        <div class="social-icons">
+          <img src="../images/facebook-icon.png" alt="Facebook" />
+          <img src="../images/telegram-icon.png" alt="Telegram" />
+          <img src="../images/instagram-icon.png" alt="Instagram" />
+        </div>
+        <h4>Call us</h4>
+        <p>085778409829</p>
+      </div>
+
+      <div class="footer-right">
+        <h4>Komunitas</h4>
+        <ul>
+          <li><a href="#">Tentang kami</a></li>
+          <li><a href="#">Visi dan misi</a></li>
+          <li><a href="#">Dampak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <h4>Fitur</h4>
+        <ul>
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#">Materi</a></li>
+          <li><a href="#">Branding</a></li>
+          <li><a href="#">Event</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="footer-right">
-      <h4>Komunitas</h4>
-      <ul>
-        <li><a href="#">Tentang kami</a></li>
-        <li><a href="#">Visi dan misi</a></li>
-        <li><a href="#">Dampak</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sales and Refunds</a>
+      <a href="#">Legal</a>
+      <a href="#">Site Map</a>
     </div>
+  </footer>
+  <script>
+    const input = document.getElementById('posterInput');
+    const gallery = document.getElementById('eventGallery');
 
-    <div class="footer-right">
-      <h4>Fitur</h4>
-      <ul>
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Materi</a></li>
-        <li><a href="#">Branding</a></li>
-        <li><a href="#">Event</a></li>
-      </ul>
-    </div>
-  </div>
+    input.addEventListener('change', function () {
+      const file = this.files[0];
+      if (!file) return;
 
-  <div class="footer-bottom">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Use</a>
-    <a href="#">Sales and Refunds</a>
-    <a href="#">Legal</a>
-    <a href="#">Site Map</a>
-  </div>
-</footer>
-<script>
-  const input = document.getElementById('posterInput');
-  const gallery = document.getElementById('eventGallery');
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const card = document.createElement('div');
+        card.className = 'event-card';
 
-  input.addEventListener('change', function () {
-    const file = this.files[0];
-    if (!file) return;
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.alt = "Poster Event";
 
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const card = document.createElement('div');
-      card.className = 'event-card';
-
-      const img = document.createElement('img');
-      img.src = e.target.result;
-      img.alt = "Poster Event";
-
-      card.appendChild(img);
-      gallery.appendChild(card);
-    };
-    reader.readAsDataURL(file);
-  });
-</script>
+        card.appendChild(img);
+        gallery.appendChild(card);
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
 
 </body>
+
 </html>
