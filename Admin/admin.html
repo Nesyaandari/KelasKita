@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - Kelas Kita</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../images/LOGO.png" alt="Logo Kelas Kita" class="logo-img">
+      <h2>KELAS KITA</h2>
+    </div>
+    <nav>
+      <ul>
+        <li class="menu-item" data-section="materi">
+          <i class="fas fa-book-open"></i> Materi
+        </li>
+        <li class="menu-item active" data-section="branding">
+          <i class="fas fa-paint-brush"></i> Branding
+        </li>
+        <li class="menu-item" data-section="event">
+          <i class="fas fa-calendar-alt"></i> Event
+        </li>
+        <li class="menu-item" data-section="users">
+          <i class="fas fa-users"></i> Users
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="topbar">
+      <h1 id="sectionTitle">Materi</h1>
+      <div class="filter">
+        <label for="statusFilter">Filter Status:</label>
+        <select id="statusFilter">
+          <option value="all">Semua</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Disetujui</option>
+          <option value="rejected">Ditolak</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Branding Section -->
+    <section class="upload-section" id="branding">
+      <div class="card" data-status="pending">
+        <img src="https://via.placeholder.com/100" alt="Upload">
+        <div class="card-content">
+          <h3>Logo Baru</h3>
+          <p>Desain logo terbaru dari user.</p>
+          <div class="status pending">Pending</div>
+        </div>
+        <div class="card-actions">
+          <button class="approve"><i class="fas fa-check"></i> Setujui</button>
+          <button class="reject"><i class="fas fa-times"></i> Tolak</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materi Section -->
+    <section class="upload-section" id="materi" style="display:none;">
+      <div class="card" data-status="pending">
+        <img src="https://via.placeholder.com/100" alt="Upload">
+        <div class="card-content">
+          <h3>Belajar HTML Dasar</h3>
+          <p>Materi pemrograman untuk pemula.</p>
+          <div class="status pending">Pending</div>
+        </div>
+        <div class="card-actions">
+          <button class="approve"><i class="fas fa-check"></i> Setujui</button>
+          <button class="reject"><i class="fas fa-times"></i> Tolak</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Section -->
+    <section class="upload-section" id="event" style="display:none;">
+      <div class="card" data-status="pending">
+        <img src="https://via.placeholder.com/100" alt="Upload">
+        <div class="card-content">
+          <h3>Workshop Python</h3>
+          <p>Event belajar Python gratis untuk umum.</p>
+          <div class="status pending">Pending</div>
+        </div>
+        <div class="card-actions">
+          <button class="approve"><i class="fas fa-check"></i> Setujui</button>
+          <button class="reject"><i class="fas fa-times"></i> Tolak</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Users Section -->
+    <section class="upload-section" id="users" style="display:none;">
+      <div class="card" data-status="approved">
+        <img src="../images/ammar.jpg" alt="User">
+        <div class="card-content">
+          <h3>Ammar Ganteng</h3>
+          <p>Email: johndoe@example.com</p>
+          <p>Password: <span style="letter-spacing:2px;">••••••••</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
