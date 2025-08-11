@@ -33,12 +33,26 @@
             <a href="Branding/branding.html">Branding</a>
             <a href="SeputarEvent/seputarevent.html">Seputar Event</a>
         </nav>
-        <div class="auth">
-            <a href="signup.html" class="signup">Sign Up</a>
-            <a href="login.html" class="login">Login</a>
-        </div>
+        <div class="auth" id="authSection">
+    <a href="signup.html" class="signup">Sign Up</a>
+    <a href="login.html" class="login">Login</a>
+</div>
+
     </header>
-    <!-- </nav> -->
+   
+    <!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="images/logo.png" alt="KelasKita" class="sidebar-logo">
+    </div>
+    <ul class="sidebar-menu">
+        <li id="menuProfile"><img src="images/profileuser.png" class="icon"> Profil</li>
+        <li id="menuSettings"><img src="images/settings.png" class="icon"> Settings</li>
+        <li id="menuLogout"><img src="images/logout.png" class="icon"> Log out</li>
+    </ul>
+</div>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
 
 
     <section class="section-content">
@@ -257,7 +271,8 @@
         </div>
     </footer>
     <!-- Footer End -->
-
+     <script src="auth.js"></script>
+     <script src="sidebar.js"></script>
     <script src="beranda.js"></script>
 
 </body>

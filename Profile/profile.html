@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil - KelasKita</title>
+<link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+<div class="profile-card">
+    <img id="profileAvatar" src="images/addina.jpg" alt="Avatar">
+    <h2 id="profileName">User</h2>
+    <p>Hallo ini masih kosong</p>
+</div>
+
+
+<script>
+// Ambil data dari localStorage
+document.getElementById('profileName').textContent = localStorage.getItem('username') || 'User';
+document.getElementById('profileAvatar').src = localStorage.getItem('userAvatar') || 'images/default.png';
+// Jika kamu menyimpan email, bisa tambahkan di localStorage
+</script>
+</body>
+</html>

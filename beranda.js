@@ -103,3 +103,69 @@ document.addEventListener('DOMContentLoaded', function() {
             // Make slideContents globally accessible for button clicks
             window.slideContents = slideContents;
         });
+
+// // === Auth Section ===
+// document.addEventListener('DOMContentLoaded', function () {
+//     const authSection = document.getElementById('authSection');
+//     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+//     if (isLoggedIn) {
+//         const username = localStorage.getItem('username') || 'User';
+//         const avatar = localStorage.getItem('userAvatar') || 'images/addina.jpg';
+
+//         authSection.innerHTML = `
+//             <div style="display:flex; align-items:center; gap:8px;">
+//                 <span style="font-weight:600;">${username}</span>
+//                  <img src="${avatar}" alt="User Avatar" class="avatar-img" style="width:32px; height:32px; border-radius:50%;">
+//                 <button id="logoutBtn" style="padding:4px 10px; background:#FF9500; color:white; border:none; border-radius:10px; cursor:pointer;">Logout</button>
+//             </div>
+//         `;
+
+//         document.getElementById('logoutBtn').addEventListener('click', () => {
+//             localStorage.clear();
+//             window.location.reload();
+//         });
+//     } else {
+//         authSection.innerHTML = `
+//             <a href="signup.html" class="signup">Sign Up</a>
+//             <a href="login.html" class="login">Login</a>
+//         `;
+//     }
+// });
+
+
+
+// // === Sidebar Logic ===
+// const sidebar = document.getElementById('sidebar');
+// const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+// // Klik avatar untuk buka sidebar
+// document.addEventListener('click', function(e){
+//     if (e.target.classList.contains('avatar-img')) {
+//         sidebar.classList.add('open');
+//         sidebarOverlay.classList.add('show');
+//     }
+// });
+
+// // Klik overlay untuk tutup sidebar
+// sidebarOverlay.addEventListener('click', () => {
+//     sidebar.classList.remove('open');
+//     sidebarOverlay.classList.remove('show');
+// });
+
+// // Menu Profile
+// document.getElementById('menuProfile').addEventListener('click', () => {
+//     window.location.href = 'Profile/profile.html';
+// });
+
+// // Menu Settings
+// document.getElementById('menuSettings').addEventListener('click', () => {
+//     alert('Settings masih statis.');
+// });
+
+// // Menu Logout
+// document.getElementById('menuLogout').addEventListener('click', () => {
+//     localStorage.clear();
+//     window.location.href = 'beranda.html';
+// });
+

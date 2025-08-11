@@ -62,4 +62,6 @@ document.getElementById('projectForm').addEventListener('submit', function (e) {
   if (imageInput.files[0]) {
     reader.readAsDataURL(imageInput.files[0]);
   }
+
+  
 });
