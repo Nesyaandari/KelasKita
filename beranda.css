@@ -639,6 +639,7 @@
         section {
             padding: 60px 20px;
         }
+    
 
         
 
@@ -772,3 +773,44 @@
                 height: 135px;
             }
         }
+
+        .team-slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.team-track {
+    display: flex;
+    gap: 32px;
+    animation: scroll-left 20s linear infinite;
+}
+
+.team-member {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.team-member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f5a400;
+    padding: 4px;
+}
+
+.team-member p {
+    font-weight: 500;
+    color: #333;
+    margin-top: 8px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
