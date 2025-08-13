@@ -1,6 +1,58 @@
+<?php
+// Koneksi ke database
+$host = "localhost:3307";
+$user = "root"; // ganti sesuai konfigurasi
+$pass = "";
+$dbname = "kelaskita"; // ganti sesuai database
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Proses upload file
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['poster'])) {
+    $targetDir = "uploads/"; // folder penyimpanan
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
+
+    $filename = basename($_FILES["poster"]["name"]);
+    $targetFile = $targetDir . $filename;
+    $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+    // Validasi format file
+    $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
+    if (!in_array($fileType, $allowedTypes)) {
+        echo "<script>alert('Hanya file gambar yang diperbolehkan!');</script>";
+    } else {
+        if (move_uploaded_file($_FILES["poster"]["tmp_name"], $targetFile)) {
+            // Simpan data ke database
+            $stmt = $conn->prepare("INSERT INTO events (filename) VALUES (?)");
+            $stmt->bind_param("s", $filename);
+            $stmt->execute();
+            $stmt->close();
+
+            // Redirect untuk mencegah POST resubmission
+            header("Location: seputarevent.php?upload=success");
+            exit;
+        } else {
+            echo "<script>alert('Gagal mengunggah file!');</script>";
+        }
+    }
+}
+
+// Notifikasi sukses upload
+if (isset($_GET['upload']) && $_GET['upload'] === 'success') {
+   
+}
+
+// Ambil data event dari database
+$events = $conn->query("SELECT * FROM events WHERE status='approved' ORDER BY uploaded_at DESC");
+?>
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,10 +72,6 @@
     <div class="flag-red"></div>
     <div class="flag-white"></div>
   </div>
-  <!-- Floating Garuda Symbol -->
-  <div class="garuda-float">
-    <img src="../images/chat.png" alt="Chat" style="width:32px; height:32px;">
-  </div>
 
   <!-- Navbar -->
   <header>
@@ -34,47 +82,36 @@
       <a href="../Branding/branding.html">Branding</a>
       <a class="active" href="#">Seputar Event</a>
     </nav>
-
-   <div class="auth" id="authSection">
-   <a href="../signup.html" class="signup">Sign Up</a>
-   <a href="../login.html" class="login">Login</a>
-
-</div>
-
-  </header>
-
-  <!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-    <div class="sidebar-header">
-        <img src="../images/logo.png" alt="KelasKita" class="sidebar-logo">
+    <div class="auth" id="authSection">
+      <a href="../signup.html" class="signup">Sign Up</a>
+      <a href="../login.html" class="login">Login</a>
     </div>
-    <ul class="sidebar-menu">
-       <li id="menuProfile"><img src="../images/profileuser.png" class="icon"> Profil</li>
-        <li id="menuSettings"><img src="../images/settings.png" class="icon"> Settings</li>
-        <li id="menuLogout"><img src="../images/logout.png" class="icon"> Log out</li>
-    </ul>
-</div>
-<div id="sidebarOverlay" class="sidebar-overlay"></div>
-
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <h2><span class="icon">📅</span> SEPUTAR <span class="highlight">EVENT</span></h2>
-    <p><span class="orange">Temukan dan ikuti</span> event menarik seputar komunitas dan <span
-        class="orange">pembelajaran</span></p>
-    <!-- Tombol unggah -->
-    <button class="upload-btn" onclick="document.getElementById('posterInput').click()">Unggah Event</button>
-    <input type="file" id="posterInput" accept="image/*" style="display: none;" />
+    <p><span class="orange">Temukan dan ikuti</span> event menarik seputar komunitas dan <span class="orange">pembelajaran</span></p>
+
+    <!-- Form unggah -->
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="poster" accept="image/*" required>
+        <button type="submit" class="upload-btn">Unggah Event</button>
+    </form>
   </section>
 
   <!-- Event Cards -->
   <section class="event-gallery">
-    <!-- Galeri Event -->
     <div class="event-gallery" id="eventGallery">
-      <!-- Poster akan ditambahkan otomatis ke sini -->
+      <?php while ($row = $events->fetch_assoc()) { ?>
+        <div class="event-card">
+          <img src="uploads/<?php echo htmlspecialchars($row['filename']); ?>" alt="Event Poster" style="width:100%; border-radius:8px;">
+          <p>Status: <?php echo htmlspecialchars($row['status']); ?></p>
+          <small>Diunggah: <?php echo $row['uploaded_at']; ?></small>
+        </div>
+      <?php } ?>
     </div>
   </section>
-
 
   <!-- Footer -->
   <footer>
@@ -126,9 +163,5 @@
       <a href="#">Site Map</a>
     </div>
   </footer>
-  <script src="../sidebar.js"></script>
-  <script src="../auth.js"></script>
-  <script src="seputarevent.js"></script>
 </body>
-
 </html>

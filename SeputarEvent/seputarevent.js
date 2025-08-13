@@ -1,62 +1,30 @@
-const input = document.getElementById('posterInput');
-const gallery = document.getElementById('eventGallery');
+// seputarevent.js
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.querySelector("input[name='poster']");
+    const previewContainer = document.getElementById("eventGallery");
 
-// Fungsi untuk menambahkan poster ke galeri
-function addPoster(filename) {
-  const card = document.createElement('div');
-  card.className = 'event-card';
+    if (fileInput) {
+        fileInput.addEventListener("change", function () {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    // Hapus preview lama
+                    const oldPreview = document.querySelector(".preview-card");
+                    if (oldPreview) oldPreview.remove();
 
-  const img = document.createElement('img');
-  img.src = "uploads/" + filename; // Pastikan path sesuai
-  img.alt = "Poster Event";
-
-  card.appendChild(img);
-  gallery.appendChild(card);
-}
-
-// 📌 1. Saat halaman dibuka, load semua event dari database
-fetch("load_event.php")
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === "success") {
-      data.events.forEach(filename => addPoster(filename));
+                    // Buat preview baru
+                    const previewCard = document.createElement("div");
+                    previewCard.classList.add("event-card", "preview-card");
+                    previewCard.innerHTML = `
+                        <img src="${e.target.result}" alt="Preview Poster" style="width:100%; border-radius:8px;">
+                        <p>Status: pending</p>
+                        <small>Menunggu upload...</small>
+                    `;
+                    previewContainer.prepend(previewCard);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
     }
-  })
-  .catch(err => console.error(err));
-
-// 📌 2. Saat upload file baru
-input.addEventListener('change', function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  // Preview di browser
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    const card = document.createElement('div');
-    card.className = 'event-card';
-
-    const img = document.createElement('img');
-    img.src = e.target.result;
-    img.alt = "Poster Event";
-
-    card.appendChild(img);
-    gallery.appendChild(card);
-  };
-  reader.readAsDataURL(file);
-
-  // Kirim ke server PHP
-  const formData = new FormData();
-  formData.append("poster", file);
-
-  fetch("upload_event.php", {
-    method: "POST",
-    body: formData
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.status === "success") {
-        addPoster(data.filename);
-      }
-    })
-    .catch(err => console.error(err));
 });
