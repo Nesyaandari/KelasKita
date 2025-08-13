@@ -369,43 +369,27 @@ nav a:hover {
 }
 
 /* Grid Projek */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
 .project-card {
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden; /* Supaya border mengikuti bentuk gambar */
   background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: left;
-  transition: 0.3s;
-  display: block;
-}
-
-.project-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 300px;
 }
 
 .project-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  display: block;
+  width: 100%;   /* Gambar akan menyesuaikan lebar kartu */
+  height: auto;  /* Tinggi otomatis mengikuti rasio asli */
+  border-bottom: 2px solid #ccc; /* Border antara gambar & teks */
 }
 
-.project-card h3 {
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
+.project-card h3,
 .project-card p {
-  font-size: 14px;
-  color: #666;
+  padding: 10px;
 }
+
 
 /* Footer */
 footer {
@@ -563,16 +547,26 @@ footer {
   left: 0; top: 0;
   width: 100%; height: 100%;
   background-color: rgba(0,0,0,0.5);
+
+  /* flexbox untuk center vertikal & horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* ruang untuk layar kecil */
 }
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
   padding: 30px;
   border-radius: 12px;
   width: 90%;
   max-width: 500px;
   position: relative;
+
+  /* batas tinggi agar tidak melebihi layar */
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .modal-content h2 {
@@ -617,4 +611,5 @@ footer {
 .close:hover {
   color: #333;
 }
+
 

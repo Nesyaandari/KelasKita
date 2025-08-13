@@ -78,13 +78,13 @@ $events = $conn->query("SELECT * FROM events WHERE status='approved' ORDER BY up
     <img src="../images/LOGO.png" alt="Logo" class="logo swing" />
     <nav>
       <a href="../beranda.html">Beranda</a>
-      <a href="../Materi/materi.html">Materi</a>
-      <a href="../Branding/branding.html">Branding</a>
+      <a href="../Materi/materi.php">Materi</a>
+      <a href="../Branding/branding.php">Branding</a>
       <a class="active" href="#">Seputar Event</a>
     </nav>
     <div class="auth" id="authSection">
-      <a href="../signup.html" class="signup">Sign Up</a>
-      <a href="../login.html" class="login">Login</a>
+      <a href="../signup.php" class="signup">Sign Up</a>
+      <a href="../login.php" class="login">Login</a>
     </div>
   </header>
 
